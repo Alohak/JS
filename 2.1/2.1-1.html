@@ -3,9 +3,17 @@
 <head>
 	<meta charset="UTF-8">
 	<title>2.1-1</title>
-	<script type="text/javascript" src="2.1-1.js"></script>
 </head>
 <body>
 	
+	<script defer="defer" type="text/javascript" src="2.1-1.js"></script>
 </body>
 </html>
+
+<!-- 将JS引用放在<body>元素中页面内容的后面，
+这样，在解析包含JavaScript的代码之前，页面的内容将完全呈现在浏览器中。 -->
+
+<!-- HTML 4.0.1为<script>标签定义了defer属性。
+这个属性的用途是表明脚本在执行时不会影响页面的构造。
+也就是，脚本会延迟到整个页面都解析完毕后再运行，即浏览器遇到</html>标签后。
+defer只适用于外部脚本文件。 -->
