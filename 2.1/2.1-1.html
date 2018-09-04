@@ -6,14 +6,31 @@
 </head>
 <body>
 	
-	<script defer="defer" type="text/javascript" src="2.1-1.js"></script>
+	<script defer="defer" type="text/javascript" src="js/2.1-1.js"></script>
 </body>
 </html>
 
-<!-- 将JS引用放在<body>元素中页面内容的后面，
-这样，在解析包含JavaScript的代码之前，页面的内容将完全呈现在浏览器中。 -->
+<!-- 
+将JS引用放在<body>元素中页面内容的后面，
+这样，在解析包含JavaScript的代码之前，页面的内容将完全呈现在浏览器中。 
+-->
 
-<!-- HTML 4.0.1为<script>标签定义了defer属性。
+<!-- 
+HTML 4.0.1为<script>标签定义了defer属性。
 这个属性的用途是表明脚本在执行时不会影响页面的构造。
 也就是，脚本会延迟到整个页面都解析完毕后再运行，即浏览器遇到</html>标签后。
-defer只适用于外部脚本文件。 -->
+defer只适用于外部脚本文件。 
+-->
+
+<!-- 
+HTML5为<script>标签定义了async属性，与defer类似，用于改变处理脚本的行为。
+只适用于外部脚本文件。但不保证按照先后顺序执行。
+指定async属性的目的是不让页面等待脚本下载和执行，从而影响异步加载页面其他内容。
+建议异步脚本不要在加在期间修改DOM。
+-->
+
+<!-- 
+①如果 async="async"：脚本相对于页面的其余部分异步地执行（当页面继续进行解析时，脚本将被执行）
+②如果不使用 async 且 defer="defer"：脚本将在页面完成解析时执行
+③如果既不使用 async 也不使用 defer：在浏览器继续解析页面之前，立即读取并执行脚本
+-->
